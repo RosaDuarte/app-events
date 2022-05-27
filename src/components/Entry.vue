@@ -78,6 +78,10 @@ export default {
             if(!this.validPassword(this.password)){
                 this.errors.push('La contraseña debe contener entre 4 y 12 dígitos.');
             }
+            if (!this.errors.length) {
+                this.$router.push({name: 'About'});
+                return true;
+            }
             e.preventDefault();
         },
         validEmail(email) {
